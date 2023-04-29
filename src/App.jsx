@@ -1,10 +1,11 @@
 import './App.css'
+import ChatInput from './Chat'
 
 function App() {
   return (
-    <>
-    <h1>REACT APP</h1>
-    </>
+    <div className='App'>
+    <ChatInput />
+    </div>
   )
 }
 
