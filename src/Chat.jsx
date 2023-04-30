@@ -20,7 +20,6 @@ function ChatInput() {
     messages.push({ role: 'user', content: inputText });
     
     const response = await httpCommon.post('/complete', {messages});
-    console.log(response.data)
     setMessages([...messages, { role: 'assistant', content: response.data.response}]);
     setInputText('');
   };

@@ -1,6 +1,5 @@
 import beautify from 'js-beautify';
 const DownloadTxtFile = ({messages}) => {
-  console.log(messages);
   const downloadTxtFile = () => {
     const element = document.createElement("a");
     const data = beautify(JSON.stringify(messages), { indent_size: 2, space_in_empty_paren: true });

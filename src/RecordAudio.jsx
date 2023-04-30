@@ -43,7 +43,6 @@ const RecordAudioComponent = (props) => {
 httpCommon
       .post('/record', formData)
       .then((response) => {
-        console.log(response);
         setInputText(response.data.transcript);
         setAudioBlob(null);
       })
