@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import httpCommon from './http/http-common';
 import MessageList from './MessageList';
 import RecordAudioComponent from './RecordAudio';
 import DownloadTxtFile from './DownloadTxtFile';
@@ -19,7 +19,7 @@ function ChatInput() {
     // TODO: react sets the two states at the same time, so the message is not shown. fix this.
     messages.push({ role: 'user', content: inputText });
     
-    const response = await axios.post('http://localhost:8080/api/complete', {messages});
+    const response = await httpCommon.post('/complete', {messages});
     console.log(response.data)
     setMessages([...messages, { role: 'assistant', content: response.data.response}]);
     setInputText('');

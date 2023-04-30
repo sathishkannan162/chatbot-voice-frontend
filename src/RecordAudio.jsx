@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import httpCommon from './http/http-common';
 import { BiMicrophone } from 'react-icons/bi';
 import { BsStopCircle } from 'react-icons/bs';
 import { MdOutlineTranscribe } from 'react-icons/md';
@@ -40,9 +40,8 @@ const RecordAudioComponent = (props) => {
   const handlePostAudio = () => {
     const formData = new FormData();
     formData.append('audioData', audioBlob, 'recording.wav');
-
-    axios
-      .post('http://localhost:8080/api/record', formData)
+httpCommon
+      .post('/record', formData)
       .then((response) => {
         console.log(response);
         setInputText(response.data.transcript);
