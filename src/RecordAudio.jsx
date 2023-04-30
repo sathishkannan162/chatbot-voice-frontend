@@ -40,7 +40,7 @@ const RecordAudioComponent = (props) => {
   const handlePostAudio = () => {
     const formData = new FormData();
     formData.append('audioData', audioBlob, 'recording.wav');
-httpCommon
+    httpCommon
       .post('/record', formData)
       .then((response) => {
         setInputText(response.data.transcript);
@@ -59,7 +59,7 @@ httpCommon
             <BsStopCircle />
           </button>
         ) : (
-          <button className='start-audio-button' onClick={handleStartRecording}>
+          <button className="start-audio-button" onClick={handleStartRecording}>
             <BiMicrophone />
           </button>
         )}
