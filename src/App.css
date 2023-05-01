@@ -41,8 +41,6 @@
   margin: 15px;
 }
 
-
-
 .chat-container {
   width: 82%;
   background-color: #efefef;
@@ -149,6 +147,8 @@
   border: 1px solid #e3e3e3;
   font-size: 14px;
   outline: none;
+  resize: none;
+  overflow: hidden;
 }
 
 .send-button,
@@ -173,3 +173,31 @@
   cursor: not-allowed;
 }
 
+.message-text {
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+
+/* .message-text > p { */
+/*   margin: 0; */
+/* } */
+
+/* .message-text > pre { */
+/*   height: fit-content; */
+/*   background-color: #000; */
+/*   overflow: hidden; */
+/*   overflow-x: scroll; */
+/*   scrollbar-width: 0.5px; */
+/*   scrollbar-color: #888 #000; */
+/*   display: block; */
+  /* black backgroud for code*/
+  /* color: #f2f2f2; */
+  /* padding: 5px; */
+  /* border-radius: 5px; */
+  /* font-size: 14px; */
+  /* width: inherit; */
+/* } */
+
+/* .message-text > p > code { */
+/*   background-color: grey; */
+/* } */

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import httpCommon from './http/http-common';
 import MessageList from './MessageList';
 import RecordAudioComponent from './RecordAudio';
@@ -9,6 +9,13 @@ import {BsSend} from 'react-icons/bs';
 function ChatInput() {
   const [inputText, setInputText] = useState('');
   const [ messages, setMessages ] = useState([]);
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' && event.shiftKey) {
+      event.preventDefault(); // Prevent the form from submitting
+      handleInputSubmit(event);
+    }
+  };
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
@@ -31,11 +38,6 @@ function ChatInput() {
 
   return (
     <>
-    {/* <h1 className='chat-title'>Chat</h1> */}
-    {/* <p className='chat-subtitle'>Talk to the assistant</p> */}
-    {/* <p className='chat-subtitle'>Press the microphone button to start recording</p> */}
-    {/* <p className='chat-subtitle'>Press the microphone button again to stop recording</p> */}
-    {/* <p className='chat-subtitle'>Press the download button to download the conversation</p> */}
     <div className='side-panel'>
     <DownloadTxtFile messages={messages}/>
     <button className='clear-chat-button' onClick={clearChat}>Clear Chat</button>
@@ -43,8 +45,8 @@ function ChatInput() {
     <div className='chat-container'>
       <MessageList messages={messages} />
       <div className='input-container'>
-    <form className='chat-input' onSubmit={handleInputSubmit}>
-      <input className='text-input' type="text" value={inputText} onChange={handleInputChange} />
+        <form className='chat-input' onSubmit={handleInputSubmit}> 
+      <textarea cols="30" rows="1" className='text-input' type="text" value={inputText} onChange={handleInputChange} onKeyDown={handleKeyDown} />
       <button className='send-button' type="submit"><BsSend /></button>
     </form>
     <RecordAudioComponent setInputText={setInputText}/>
