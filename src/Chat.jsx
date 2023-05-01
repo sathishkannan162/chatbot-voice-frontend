@@ -11,7 +11,7 @@ function ChatInput() {
   const [ messages, setMessages ] = useState([]);
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter' && event.shiftKey) {
+    if (event.key === 'Enter' && event.ctrlKey) {
       event.preventDefault(); // Prevent the form from submitting
       handleInputSubmit(event);
     }
