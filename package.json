@@ -10,7 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.6.0",
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.2",
     "axios": "^1.4.0",
+    "framer-motion": "^10.12.4",
     "github-markdown-css": "^5.2.0",
     "js-beautify": "^1.14.7",
     "react": "^18.2.0",
