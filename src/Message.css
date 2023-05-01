@@ -1,0 +1,25 @@
+.chat-bubble {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+}
+.chat-bubble-user {
+  flex-direction: row-reverse;
+  background-color: #2196f3;
+  color: white;
+}
+.avatar {
+  margin-right: 8px;
+  margin-left: 8px;
+  width: 32px;
+  height: 32px;
+}
+.avatar-user {
+  margin-right: 0;
+  margin-left: 8px;
+}
+.message-text {
+  flex-grow: 1;
+}
