@@ -58,7 +58,7 @@ const sampleMessages = [
   {
     role: 'assistant',
     content:
-      'As a AI language model, I cannot sing.But I can write poems about anything you wish.',
+    "```js \n" +"function test() {\n" + "  console.log('notice the blank line before this function?');\n" + "}\n" + "```",
   },
 ];
 
@@ -66,8 +66,8 @@ function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [inputText, setInputText] = useState('');
-  // const [messages, setMessages] = useState([]);
-  const [messages, setMessages] = useState(sampleMessages);
+  const [messages, setMessages] = useState([]);
+  // const [messages, setMessages] = useState(sampleMessages);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -259,7 +259,7 @@ function ResponsiveDrawer(props) {
           sx={{
             position: 'absolute',
             width: { sm: `calc(100% - ${drawerWidth}px)` },
-            bottom: '9px',
+            top: { xs: 'auto', sm: 0 },
             // border: '1px solid #ccc',
           }}
         >
