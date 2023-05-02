@@ -60,14 +60,16 @@ import { Box } from '@mui/material';
 
 export default function Message(props) {
   // const classes = useStyles();
-  const { message } = props;
+  const { message, light } = props;
   const avatarSrc = message.role === 'user' ? user : robot;
+  const avatarClass = light ? `avatar avatar-${message.role}` : `avatar avatar-dark-${message.role}`;
+  // const markdownClass = light ? `markdown-body markdown-body-light` :`markdown-body markdown-body-dark`; 
   return (
       <Paper className={`chat-bubble chat-bubble-${message.role}`}>
-      <Avatar src={avatarSrc} className={`avatar avatar-${message.role}`} />
+      <Avatar src={avatarSrc} className={avatarClass} />
       {/* <Box className="message-text"> */}
         {/* <Typography sx={{overflow: 'hidden'}} className="markdown-body"> */}
-        <div className='markdown-body'>
+        <div className={'markdown-body'}>
           <ReactMarkdown
             children={message.content}
             remarkPlugins={[remarkGfm]}

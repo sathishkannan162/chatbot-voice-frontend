@@ -23,6 +23,8 @@ import Typography from '@mui/material/Typography';
 import ChatInput from './Chat';
 import DownloadTxtFile from './DownloadTxtFile';
 import Button from '@mui/material/Button';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
 
 const drawerWidth = 200;
 const inputWidth = 100;
@@ -63,7 +65,7 @@ const sampleMessages = [
 ];
 
 function ResponsiveDrawer(props) {
-  const { window } = props;
+  const { window,handleDarkMode, light} = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [inputText, setInputText] = useState('');
   const [messages, setMessages] = useState([]);
@@ -191,6 +193,7 @@ function ResponsiveDrawer(props) {
           <Typography variant="h6" noWrap component="div">
             Chat With AI
           </Typography>
+          {/* <FormControlLabel sx={{ ml: 'auto' }} control={<Switch onClick={handleDarkMode} />} label="Dark Mode" /> */}
         </Toolbar>
       </AppBar>
       <Box
@@ -253,6 +256,7 @@ function ResponsiveDrawer(props) {
         >
           <MessageList
             messages={messages}
+          light={light}
             responsiveHeaderHeight={responsiveHeaderHeight}
           />
         </Box>
@@ -275,7 +279,6 @@ function ResponsiveDrawer(props) {
               paddingLeft: '0px',
               paddingTop: 0,
               paddingBottom: 0,
-              backgroundColor: '#fff',
               textDecoration: 'none',
               // outline: 'black solid 1px',
               margin: '0 auto',
