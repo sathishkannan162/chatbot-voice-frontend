@@ -5,7 +5,7 @@ import { BsStopCircle } from 'react-icons/bs';
 import { MdOutlineTranscribe } from 'react-icons/md';
 // import {MdTranscribe} from 'react-icons/md'
 // import {TfiWrite} from 'react-icons/tfi';
-import { Box, Button, IconButton } from '@mui/material';
+import { Box, IconButton, Tooltip } from '@mui/material';
 
 const RecordAudioComponent = (props) => {
   const { setInputText } = props;
@@ -57,32 +57,31 @@ const RecordAudioComponent = (props) => {
   return (
     <>
       {/* <div className="audio-buttons"> */}
-    <Box sx={{display: "flex", flexDirection:"row"}}>
+      <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         {recording ? (
-          <IconButton
-            className="stop-audio-button"
-            onClick={handleStopRecording}
-          >
+          <Tooltip title="Stop Recording">
+          <IconButton onClick={handleStopRecording} color="error">
             <BsStopCircle />
           </IconButton>
+          </Tooltip>
         ) : (
-          <IconButton
-            className="start-audio-button"
-            onClick={handleStartRecording}
-          >
+          <Tooltip title="Start Recording">
+          <IconButton onClick={handleStartRecording} color="primary">
             <BiMicrophone />
           </IconButton>
+          </Tooltip>
         )}
+    <Tooltip title="Transcribe"><Box>
         <IconButton
-          className="transcribe-button"
           onClick={handlePostAudio}
           disabled={!audioBlob}
+          color="primary"
         >
           {/* Transcribe */}
-    <MdOutlineTranscribe />
-
-        </IconButton>
-    </Box>
+          <MdOutlineTranscribe />
+        </IconButton></Box>
+    </Tooltip>
+      </Box>
       {/* </div> */}
     </>
   );

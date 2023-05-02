@@ -35,3 +35,13 @@
 .message-text {
   flex-grow: 1;
 }
+
+/* dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .chat-bubble {
+    background-color: rgba(0,0,0,0.87) !important;
+  }
+  .avatar-assistant {
+    background-color: white !important;
+  }
+}

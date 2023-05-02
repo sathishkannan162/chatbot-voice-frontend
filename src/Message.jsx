@@ -21,6 +21,7 @@ import remarkGfm from 'remark-gfm';
 import { Avatar, Paper, Typography } from '@mui/material';
 import 'github-markdown-css/github-markdown.css';
 import './Message.css';
+import {Box} from '@mui/material'
 
 export default function Message(props) {
   const { message } = props;
@@ -28,11 +29,11 @@ export default function Message(props) {
   return (
     <Paper className={`chat-bubble chat-bubble-${message.role}`}>
       <Avatar src={avatarSrc} className={`avatar avatar-${message.role}`} />
-      <div className="message-text">
+      <Box className="message-text">
         <Typography variant="body1" component="div" className="markdown-body">
           <ReactMarkdown children={message.content} remarkPlugins={[remarkGfm]} />
         </Typography>
-      </div>
+      </Box>
     </Paper>
   );
 }

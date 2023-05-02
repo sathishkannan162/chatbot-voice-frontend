@@ -26,7 +26,7 @@ import Button from '@mui/material/Button';
 
 const drawerWidth = 200;
 const inputWidth = 100;
-const ResponsiveHeaderHeight = '56px';
+const responsiveHeaderHeight = '56px';
 const sampleMessages = [
   { role: 'user', content: 'hi' },
   { role: 'assistant', content: 'Hello! What can you do?' },
@@ -170,7 +170,7 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          height: ResponsiveHeaderHeight,
+          height: responsiveHeaderHeight,
         }}
       >
         <Toolbar sx={{ justifyContent: 'center' }}>
@@ -250,43 +250,64 @@ function ResponsiveDrawer(props) {
             height: '100vh',
           }}
         >
-          <MessageList messages={messages} ResponsiveHeaderHeight={ResponsiveHeaderHeight} />
+          <MessageList
+            messages={messages}
+            responsiveHeaderHeight={responsiveHeaderHeight}
+          />
         </Box>
         <Box
-          display={'flex'}
           sx={{
             position: 'absolute',
-            top: '90%',
             width: { sm: `calc(100% - ${drawerWidth}px)` },
+            bottom: '9px',
+            // border: '1px solid #ccc',
           }}
         >
           {/* <Grid container> */}
           {/* <Grid item xs={10}> */}
-          <TextField
-            multiline
-            rows={1}
-            placeholder="Type your message here"
-            value={inputText}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyDown}
-            size="small"
+          <Box
+            display={'flex'}
             sx={{
-              flexGrow: 1,
-              rows: 1,
-              borderRadius: 40,
-              outline: 'none',
+              width: { xs: "100vw", sm: `calc(100% - 80px )` },
+              paddingTop: '2px',
+              paddingBottom: '2px',
+              paddingLeft: '0px',
+              paddingTop: 0,
+              paddingBottom: 0,
+              backgroundColor: '#fff',
+              textDecoration: 'none',
+              // outline: 'black solid 1px',
+              margin: '0 auto',
+              borderRadius: '5px',
             }}
-          />
-          {/* </Grid> */}
-          {/* <Grid item xs={2}> */}
-          <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-            <IconButton onClick={handleInputSubmit}>
-              <Send />
-            </IconButton>
-            <RecordAudioComponent setInputText={setInputText} />
+          >
+            <TextField
+              multiline
+              maxRows={5}
+              placeholder="Type your message here"
+              value={inputText}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              size="small"
+            padding={0}
+              sx={{
+                flexGrow: 1,
+                '&::-webkit-scrollbar': {
+                  display: 'none',
+                },
+              }}
+            />
+            {/* </Grid> */}
+            {/* <Grid item xs={2}> */}
+            <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+              <IconButton color='primary' onClick={handleInputSubmit}>
+                <Send />
+              </IconButton>
+              <RecordAudioComponent setInputText={setInputText} />
+            </Box>
+            {/* </Grid> */}
+            {/* </Grid> */}
           </Box>
-          {/* </Grid> */}
-          {/* </Grid> */}
         </Box>
         {/* </Grid> */}
         {/* </Grid> */}
