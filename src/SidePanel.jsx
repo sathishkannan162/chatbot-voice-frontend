@@ -14,11 +14,11 @@ const SidePanel = (props) => {
     <>
       {/* <button onClick={togglePanel}>Toggle Panel</button> */}
       <Drawer anchor="left" variant='permanent' >
-        <List>
-    <ListItem button>
+        <List >
+    <ListItem >
     <DownloadTxtFile messages={messages}/>
           </ListItem>
-          <ListItem button>
+          <ListItem sx={{display: 'flex', flexDirection: 'column', alignItems: 'center',  }}>
             <Button variant="contained" onClick={clearChat}>Clear Chat</Button>
           </ListItem>
         </List>
@@ -28,4 +28,3 @@ const SidePanel = (props) => {
 };
 
 export default SidePanel;
-

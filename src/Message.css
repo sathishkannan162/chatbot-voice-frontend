@@ -1,14 +1,26 @@
 .chat-bubble {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  margin: 5px;
   padding: 8px;
   border-radius: 8px;
 }
+.chat-bubble-assistant {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 55%;
+}
 .chat-bubble-user {
+  display: flex;
   flex-direction: row-reverse;
-  background-color: #2196f3;
-  color: white;
+  align-items: center;
+  align-self: flex-end;
+  padding-left: 20px;
+}
+
+.chat-bubble-user .message-text {
+  display: block;
+  text-align: right;
+
 }
 .avatar {
   margin-right: 8px;

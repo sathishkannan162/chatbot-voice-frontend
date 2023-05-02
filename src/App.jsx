@@ -1,10 +1,11 @@
-import './App.css'
+// import './App.css'
 import ChatInput from './Chat'
+import ResponsiveDrawer from './ResponsiveHeader'
 
 function App() {
   return (
     <div className='App'>
-    <ChatInput />
+      <ResponsiveDrawer />
     </div>
   )
 }
