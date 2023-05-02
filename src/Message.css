@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  max-width: 55%;
+  max-width: 65%;
   /* overflow: 'scroll'; */
 }
 .chat-bubble-user {
@@ -45,10 +45,14 @@
 		/* margin: 0 auto; */
 	}
 
-	@media (max-width: 767px) {
+	@media (min-width: 450px) and (max-width: 780px) {
 		.markdown-body {
-      max-width: 100px;
+      max-width: 400px;
 		}
+    @media (max-width: 450px) {
+      .markdown-body {
+        max-width: 30px;
+      }
 }
 /* .markdown-body { */
 /*   width: inherit; */

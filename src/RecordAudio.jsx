@@ -60,27 +60,35 @@ const RecordAudioComponent = (props) => {
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         {recording ? (
           <Tooltip title="Stop Recording">
-          <IconButton onClick={handleStopRecording} color="error">
-            <BsStopCircle />
-          </IconButton>
+            <IconButton onClick={handleStopRecording} color="error">
+              <BsStopCircle />
+            </IconButton>
           </Tooltip>
         ) : (
           <Tooltip title="Start Recording">
-          <IconButton onClick={handleStartRecording} color="primary">
-            <BiMicrophone />
-          </IconButton>
+            <IconButton onClick={handleStartRecording} color="primary">
+              <BiMicrophone />
+            </IconButton>
           </Tooltip>
         )}
-    <Tooltip title="Transcribe"><Box>
-        <IconButton
-          onClick={handlePostAudio}
-          disabled={!audioBlob}
-          color="primary"
-        >
-          {/* Transcribe */}
-          <MdOutlineTranscribe />
-        </IconButton></Box>
-    </Tooltip>
+        <Tooltip title="Transcribe">
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            <IconButton
+              onClick={handlePostAudio}
+              disabled={!audioBlob}
+              color="primary"
+            >
+              {/* Transcribe */}
+              <MdOutlineTranscribe />
+            </IconButton>
+          </Box>
+        </Tooltip>
       </Box>
       {/* </div> */}
     </>
