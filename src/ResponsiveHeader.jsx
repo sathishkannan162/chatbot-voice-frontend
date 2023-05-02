@@ -248,6 +248,7 @@ function ResponsiveDrawer(props) {
           sx={{
             width: '100%',
             height: '100vh',
+            // height: {xs: "40vh", sm: "60vh", md: "80vh", lg: "80vh", xl: "80vh"},
           }}
         >
           <MessageList
@@ -258,8 +259,8 @@ function ResponsiveDrawer(props) {
         <Box
           sx={{
             position: 'absolute',
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
-            top: { xs: 'auto', sm: 0 },
+            width: { xs: "100vw", sm: `calc(100% - ${drawerWidth}px)` },
+            bottom: "30px",
             // border: '1px solid #ccc',
           }}
         >
@@ -268,7 +269,7 @@ function ResponsiveDrawer(props) {
           <Box
             display={'flex'}
             sx={{
-              width: { xs: "100vw", sm: `calc(100% - 80px )` },
+              width: { xs: "90%", sm: `calc(100% - 80px )` },
               paddingTop: '2px',
               paddingBottom: '2px',
               paddingLeft: '0px',
