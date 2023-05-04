@@ -23,7 +23,7 @@ import 'github-markdown-css/github-markdown.css';
 import './Message.css';
 import { Box } from '@mui/material';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { gruvboxDark, gruvboxLight, duotoneLight,materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 // const useStyles = makeStyles({
 // chatBubble: { margin: '5px', padding: '8px', borderRadius: '8px' },
 // chatBubbleUser: {
@@ -60,7 +60,7 @@ import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function Message(props) {
   // const classes = useStyles();
-  const { message, light } = props;
+  const { message, light,theme } = props;
   const avatarSrc = message.role === 'user' ? user : robot;
   const avatarClass = light
     ? `avatar avatar-${message.role}`
@@ -83,7 +83,7 @@ export default function Message(props) {
                 <SyntaxHighlighter
                   {...props}
                   children={String(children).replace(/\n$/, '')}
-                  style={dark}
+                  style={theme?materialLight:gruvboxDark}
                   language={match[1]}
                   PreTag="div"
                 />

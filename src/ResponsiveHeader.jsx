@@ -65,7 +65,7 @@ const sampleMessages = [
 ];
 
 function ResponsiveDrawer(props) {
-  const { window,handleDarkMode, light} = props;
+  const { window,handleDarkMode, light, theme} = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [inputText, setInputText] = useState('');
   const [messages, setMessages] = useState([]);
@@ -258,6 +258,7 @@ function ResponsiveDrawer(props) {
           <MessageList
             messages={messages}
           light={light}
+          theme={theme}
             responsiveHeaderHeight={responsiveHeaderHeight}
           />
         </Box>

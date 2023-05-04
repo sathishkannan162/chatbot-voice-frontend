@@ -3,10 +3,10 @@ import Message from './Message';
 import { Box,Paper } from '@mui/material';
 
 export default function MessageList(props) {
-  const {light} = props;
+  const {light,theme} = props;
   const { messages, responsiveHeaderHeight } = props;
   const list = messages.map((message, index) => {
-    return <Message key={index} message={message} light={light} />;
+    return <Message key={index} message={message} light={light} theme={theme} />;
   });
   return (
     <Paper

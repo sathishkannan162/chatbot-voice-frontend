@@ -105,7 +105,7 @@ function App() {
 
         {/* </Switch> */}
         <Box className="App">
-          <ResponsiveDrawer handleDarkMode={handleDarkMode} light={light} />
+          <ResponsiveDrawer handleDarkMode={handleDarkMode} theme={theme} light={light} />
         </Box>
       </ThemeProvider>
     </>
