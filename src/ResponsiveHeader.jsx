@@ -108,7 +108,7 @@ function ResponsiveDrawer(props) {
       {/* <Divider /> */}
       <List
         sx={{
-          height: {xs:'80vh', md: '97vh'},
+          height: {xs:'95vh', md: '97vh'},
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -266,7 +266,7 @@ function ResponsiveDrawer(props) {
           sx={{
             position: 'absolute',
             width: { xs: "100vw", sm: `calc(100% - ${drawerWidth}px)` },
-            bottom: {xs: '10vh', md:'3vh'} 
+            bottom: {xs: '3vh', md:'3vh'} 
             // border: '1px solid #ccc',
           }}
         >
