@@ -108,7 +108,7 @@ function ResponsiveDrawer(props) {
       {/* <Divider /> */}
       <List
         sx={{
-          height: '97vh',
+          height: {xs:'80vh', md: '97vh'},
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -247,10 +247,11 @@ function ResponsiveDrawer(props) {
         {/* <SidePanel messages={messages} clearChat={clearChat}/> */}
         {/* </Grid> */}
         {/* <Grid item xs={10} md={10} > */}
+        {/* chat log */}
         <Box
           sx={{
             width: '100%',
-            height: '100vh',
+            height: {xs: '80vh', sm:'100vh', md: '100vh'},
             // height: {xs: "40vh", sm: "60vh", md: "80vh", lg: "80vh", xl: "80vh"},
           }}
         >
@@ -260,11 +261,12 @@ function ResponsiveDrawer(props) {
             responsiveHeaderHeight={responsiveHeaderHeight}
           />
         </Box>
+        {/* text field */}
         <Box
           sx={{
             position: 'absolute',
             width: { xs: "100vw", sm: `calc(100% - ${drawerWidth}px)` },
-            bottom: "30px",
+            bottom: {xs: '10vh', md:'3vh'} 
             // border: '1px solid #ccc',
           }}
         >
@@ -288,7 +290,7 @@ function ResponsiveDrawer(props) {
             <TextField
               multiline
               maxRows={5}
-              placeholder="Type your message here"
+              placeholder="Type your message"
               value={inputText}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}

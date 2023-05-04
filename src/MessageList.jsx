@@ -18,10 +18,11 @@ export default function MessageList(props) {
         '&::-webkit-scrollbar': {
           display: 'none',
         },
-        height: "100vh",
+        height: {xs:"80vh", sm:"90vh", md:"100vh"},
+        // height: "100vh",
         paddingLeft: 0,
         paddingTop: responsiveHeaderHeight,
-        paddingBottom: responsiveHeaderHeight,
+        paddingBottom: "10vh",
         display: 'flex',
         flexDirection: 'column',
       }}
