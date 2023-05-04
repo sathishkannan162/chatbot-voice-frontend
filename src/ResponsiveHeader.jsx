@@ -108,7 +108,7 @@ function ResponsiveDrawer(props) {
       {/* <Divider /> */}
       <List
         sx={{
-          height: {xs:'95vh', md: '97vh'},
+          height: {xs:'88vh', md: '97vh'},
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
