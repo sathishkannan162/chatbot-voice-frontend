@@ -18,7 +18,7 @@ export default function MessageList(props) {
         '&::-webkit-scrollbar': {
           display: 'none',
         },
-        height: {xs:"90vh", sm:"90vh", md:"100vh"},
+        height: {xs:"84vh", sm:"90vh", md:"100vh"},
         // height: "100vh",
         paddingLeft: 0,
         paddingTop: responsiveHeaderHeight,
