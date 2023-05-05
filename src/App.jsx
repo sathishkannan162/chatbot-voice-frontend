@@ -9,11 +9,25 @@ const darkTheme = createTheme({
     background: {
       paper: '#000',
     },
+    primary: {
+      main: '#fff',
+    },
+    secondary: {
+      main: '#fff',
+    },
   },
 });
+
 const lightTheme = createTheme({
   palette: {
     mode: 'light',
+
+    primary: {
+      main: '#1e1e1e',
+    },
+    secondary: {
+      main: '#1e1e1e',
+    },
   },
 });
 
@@ -36,10 +50,7 @@ function App() {
     <>
       <ThemeProvider theme={light ? lightTheme : darkTheme}>
         <Box className="App">
-          <ResponsiveDrawer
-            handleDarkMode={handleDarkMode}
-            light={light}
-          />
+          <ResponsiveDrawer handleDarkMode={handleDarkMode} light={light} />
         </Box>
       </ThemeProvider>
     </>
