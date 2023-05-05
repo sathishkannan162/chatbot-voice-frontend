@@ -64,12 +64,22 @@ const sampleMessages = [
   },
 ];
 
+const codeSamplemessage=   [{ role: 'user', content: 'Can you sing?' },
+  {
+    role: 'assistant',
+    content:
+    "```js \n" +"function test() {\n" + "  console.log('notice the blank line before this function?');\n" + "}\n" + "```",
+  },
+];
+
+
 function ResponsiveDrawer(props) {
   const { window,handleDarkMode, light, theme} = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [inputText, setInputText] = useState('');
   const [messages, setMessages] = useState([]);
   // const [messages, setMessages] = useState(sampleMessages);
+  // const [messages, setMessages] = useState(codeSamplemessage);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -96,6 +106,7 @@ function ResponsiveDrawer(props) {
       { role: 'assistant', content: response.data.response },
     ]);
     setInputText('');
+    console.log(messages);
   };
 
   const clearChat = () => {
@@ -277,8 +288,8 @@ function ResponsiveDrawer(props) {
             display={'flex'}
             sx={{
               width: { xs: "90%", sm: `calc(100% - 80px )` },
-              paddingTop: '2px',
-              paddingBottom: '2px',
+              // paddingTop: '2px',
+              // paddingBottom: '2px',
               paddingLeft: '0px',
               paddingTop: 0,
               paddingBottom: 0,
