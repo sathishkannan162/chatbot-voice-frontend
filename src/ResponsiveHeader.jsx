@@ -93,7 +93,6 @@ function ResponsiveDrawer(props) {
       { role: 'assistant', content: response.data.response },
     ]);
     setInputText('');
-    console.log(messages);
   };
 
   const clearChat = () => {

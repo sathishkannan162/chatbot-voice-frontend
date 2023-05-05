@@ -26,7 +26,6 @@ export default function Message(props) {
   const handleCopyCodeBlock = () => {
     window.navigator.clipboard.writeText(codeBlockTemp);
     setCopy(true);
-    console.log({ codeBlockTemp });
     setTimeout(() => {
       setCopy(false);
     }, 3000);
@@ -69,7 +68,6 @@ export default function Message(props) {
                     )}
                   </Box>
                   <div hidden>{(codeBlockTemp = children)}</div>
-                  {console.log(match[1])}
                   <SyntaxHighlighter
                     {...props}
                     children={String(children).replace(/\n$/, '')}
