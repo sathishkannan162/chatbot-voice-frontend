@@ -4,7 +4,10 @@ import user from './assets/user-avatar.png';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Avatar, Paper, Box, Tooltip } from '@mui/material';
-import 'github-markdown-css/github-markdown.css';
+// import 'github-markdown-css/github-markdown.css';
+import './github-markdown-css/common.css';
+import './github-markdown-css/light.css';
+import './github-markdown-css/dark.css';
 import './Message.css';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {
@@ -23,6 +26,9 @@ export default function Message(props) {
     : `avatar avatar-dark-${message.role}`;
   let codeBlockTemp = ''; // NOTE: create a variable to temporarily store codeblock for copy
   //NOTE: setting state inside jsx leads to rerendering loop. set state outside it. eg: inside the function.
+  let markdownClass = light
+    ? `markdown-body-light markdown-body`
+    : `markdown-body-dark markdown-body`;
   const handleCopyCodeBlock = () => {
     window.navigator.clipboard.writeText(codeBlockTemp);
     setCopy(true);
@@ -33,7 +39,7 @@ export default function Message(props) {
   return (
     <Paper className={`chat-bubble chat-bubble-${message.role}`}>
       <Avatar src={avatarSrc} className={avatarClass} />
-      <div className={'markdown-body'}>
+      <div className={markdownClass}>
         <ReactMarkdown
           children={message.content}
           remarkPlugins={[remarkGfm]}

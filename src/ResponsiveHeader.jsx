@@ -14,6 +14,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import DownloadTxtFile from './DownloadTxtFile';
 import Button from '@mui/material/Button';
+import MaterialUISwitch from './MaterialUISwitch';
 
 const drawerWidth = 200;
 const responsiveHeaderHeight = '56px';
@@ -48,26 +49,35 @@ const sampleMessages = [
   {
     role: 'assistant',
     content:
-    "```js \n" +"function test() {\n" + "  console.log('notice the blank line before this function?');\n" + "}\n" + "```",
+      '```js \n' +
+      'function test() {\n' +
+      "  console.log('notice the blank line before this function?');\n" +
+      '}\n' +
+      '```',
   },
 ];
 
-const codeSamplemessage=   [{ role: 'user', content: 'Can you sing?' },
+const codeSamplemessage = [
+  { role: 'user', content: 'Can you sing?' },
   {
     role: 'assistant',
     content:
-    "```js \n" +"function test() {\n" + "  console.log('notice the blank line before this function?');\n" + "}\n" + "```",
+      '```js \n' +
+      'function test() {\n' +
+      "  console.log('notice the blank line before this function?');\n" +
+      '}\n' +
+      '```',
   },
 ];
 
-
 function ResponsiveDrawer(props) {
-  const { window,handleDarkMode, light, theme} = props;
+  const { window, handleDarkMode, light } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [inputText, setInputText] = useState('');
   const [messages, setMessages] = useState([]);
   // const [messages, setMessages] = useState(sampleMessages);
   // const [messages, setMessages] = useState(codeSamplemessage);
+  // TODO: set initial state of the button from the light state.
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -103,7 +113,7 @@ function ResponsiveDrawer(props) {
     <div>
       <List
         sx={{
-          height: {xs:'84vh', md: '97vh'},
+          height: { xs: '84vh', md: '97vh' },
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -130,8 +140,7 @@ function ResponsiveDrawer(props) {
           </Button>
         </ListItem>
       </List>
-      <List>
-      </List>
+      <List></List>
     </div>
   );
 
@@ -149,7 +158,7 @@ function ResponsiveDrawer(props) {
           height: responsiveHeaderHeight,
         }}
       >
-        <Toolbar sx={{ justifyContent: 'center' }}>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -167,6 +176,8 @@ function ResponsiveDrawer(props) {
           <Typography variant="h6" noWrap component="div">
             Chat With AI
           </Typography>
+          {/* {light? <MaterialUISwitch onClick={handleDarkMode} />:<MaterialUISwitch onClick={handleDarkMode} defaultChecked/>} */}
+          <MaterialUISwitch onClick={handleDarkMode} />
         </Toolbar>
       </AppBar>
       <Box
@@ -216,27 +227,26 @@ function ResponsiveDrawer(props) {
         <Box
           sx={{
             width: '100%',
-            height: {xs: '80vh', sm:'100vh', md: '100vh'},
+            height: { xs: '80vh', sm: '100vh', md: '100vh' },
           }}
         >
           <MessageList
             messages={messages}
-          light={light}
-          theme={theme}
+            light={light}
             responsiveHeaderHeight={responsiveHeaderHeight}
           />
         </Box>
         <Box
           sx={{
             position: 'absolute',
-            width: { xs: "100vw", sm: `calc(100% - ${drawerWidth}px)` },
-            bottom: {xs: '3vh', md:'3vh'} 
+            width: { xs: '100vw', sm: `calc(100% - ${drawerWidth}px)` },
+            bottom: { xs: '3vh', md: '3vh' },
           }}
         >
           <Box
             display={'flex'}
             sx={{
-              width: { xs: "90%", sm: `calc(100% - 80px )` },
+              width: { xs: '90%', sm: `calc(100% - 80px )` },
               paddingTop: '2px',
               paddingBottom: '2px',
               paddingLeft: '0px',
@@ -255,7 +265,7 @@ function ResponsiveDrawer(props) {
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
               size="small"
-            padding={0}
+              padding={0}
               sx={{
                 flexGrow: 1,
                 '&::-webkit-scrollbar': {
@@ -264,7 +274,7 @@ function ResponsiveDrawer(props) {
               }}
             />
             <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-              <IconButton color='primary' onClick={handleInputSubmit}>
+              <IconButton color="primary" onClick={handleInputSubmit}>
                 <Send />
               </IconButton>
               <RecordAudioComponent setInputText={setInputText} />
@@ -277,4 +287,3 @@ function ResponsiveDrawer(props) {
 }
 
 export default ResponsiveDrawer;
-

@@ -6,41 +6,25 @@ import { useState, useEffect } from 'react';
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
-    // primary: {
-    //   main: '#0d1117'
-    // },
-    // secondary: {
-    //   main: '#0d1117'
-    // },
-    // primary: {
-    //   main: '#1e1e1e',
-    // },
-    // secondary: {
-    //   main: '#1e1e1e',
-    // },
+    background: {
+      paper: '#000',
+    },
   },
 });
 const lightTheme = createTheme({
   palette: {
     mode: 'light',
-    // primary: {
-    //   main: '#1e1e1e',
-    // },
-    // secondary: {
-    //   main: '#1e1e1e',
-    // },
   },
 });
 
 function App() {
-  const [light, setLight] = useState(true);
-
-  const handleDarkMode = ()=>{
-    setLight(!light);
-  }
-  const [theme, setTheme] = useState(
+  const [light, setLight] = useState(
     window.matchMedia('(prefers-color-scheme: dark)').matches ? false : true
   );
+
+  const handleDarkMode = () => {
+    setLight(!light);
+  };
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -50,9 +34,12 @@ function App() {
   }, []);
   return (
     <>
-      <ThemeProvider theme={theme ? lightTheme : darkTheme}>
+      <ThemeProvider theme={light ? lightTheme : darkTheme}>
         <Box className="App">
-          <ResponsiveDrawer handleDarkMode={handleDarkMode} theme={theme} light={light} />
+          <ResponsiveDrawer
+            handleDarkMode={handleDarkMode}
+            light={light}
+          />
         </Box>
       </ThemeProvider>
     </>
