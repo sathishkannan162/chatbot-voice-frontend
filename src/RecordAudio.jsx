@@ -3,8 +3,6 @@ import httpCommon from './http/http-common';
 import { BiMicrophone } from 'react-icons/bi';
 import { BsStopCircle } from 'react-icons/bs';
 import { MdOutlineTranscribe } from 'react-icons/md';
-// import {MdTranscribe} from 'react-icons/md'
-// import {TfiWrite} from 'react-icons/tfi';
 import { Box, IconButton, Tooltip } from '@mui/material';
 
 const RecordAudioComponent = (props) => {
@@ -37,7 +35,6 @@ const RecordAudioComponent = (props) => {
   // TODO: change the button from start to stop when recording start and vice versa.
   const handleStopRecording = () => {
     setRecording(false);
-    // setTimeout(handlePostAudio, 1000);
   };
 
   const handlePostAudio = () => {
@@ -56,7 +53,6 @@ const RecordAudioComponent = (props) => {
 
   return (
     <>
-      {/* <div className="audio-buttons"> */}
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         {recording ? (
           <Tooltip title="Stop Recording">
@@ -84,13 +80,11 @@ const RecordAudioComponent = (props) => {
               disabled={!audioBlob}
               color="primary"
             >
-              {/* Transcribe */}
               <MdOutlineTranscribe />
             </IconButton>
           </Box>
         </Tooltip>
       </Box>
-      {/* </div> */}
     </>
   );
 };

@@ -1,6 +1,5 @@
-import { calcLength } from 'framer-motion';
 import Message from './Message';
-import { Box,Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 
 export default function MessageList(props) {
   const {light,theme} = props;
@@ -19,7 +18,6 @@ export default function MessageList(props) {
           display: 'none',
         },
         height: {xs:"84vh", sm:"90vh", md:"100vh"},
-        // height: "100vh",
         paddingLeft: 0,
         paddingTop: responsiveHeaderHeight,
         paddingBottom: "10vh",

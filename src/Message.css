@@ -3,10 +3,9 @@
   padding: 8px;
   border-radius: 8px;
 }
-@media (prefers-color-scheme:dark ) {
+@media (prefers-color-scheme: dark) {
   .chat-bubble {
     background-color: #000000 !important;
-    /* background-color: #0d1117aa !important;; */
   }
 }
 .chat-bubble-assistant {
@@ -14,7 +13,6 @@
   flex-direction: row;
   align-items: center;
   max-width: 65%;
-  /* overflow: 'scroll'; */
 }
 .chat-bubble-user {
   display: flex;
@@ -29,7 +27,6 @@
 .chat-bubble-user .message-text {
   display: block;
   text-align: right;
-
 }
 .avatar {
   margin-right: 8px;
@@ -50,90 +47,20 @@
 .avatar-dark-assistant {
   background-color: #efefef;
 }
-/* .markdown-body-dark { */
-/*   background-color: #1e1e1e; */
-/*   color: #eaeaea; */
-/* } */
-
-/* .markdown-body-dark > pre    { */ 
-/*   background-color: #1e1e1e; */
-/*   color: #eaeaea; */
-/* } */
 
 .markdown-body {
-	box-sizing: border-box;
+  box-sizing: border-box;
   min-width: 10px;
-	max-width: 980px;
-		/* margin: 0 auto; */
+  max-width: 980px;
 }
 
 @media (min-width: 450px) and (max-width: 780px) {
-		.markdown-body {
-      max-width: 400px;
-		}
-    @media (max-width: 450px) {
-      .markdown-body {
-        max-width: 30px;
-      }
+  .markdown-body {
+    max-width: 400px;
+  }
+  @media (max-width: 450px) {
+    .markdown-body {
+      max-width: 30px;
+    }
+  }
 }
-
-/* .markdown-body { */
-/*   width: inherit; */
-/* } */
-/* .markdown-body { */
-/*   background-color: #1e1e1e; */
-/*   color: #efefef; */
-/* } */
-
-/* .markdown-body-div { */
-/*   overflow-x: 'scroll'; */
-/*   background-color: #1e1e1e; */
-/*   color: #efefef; */
-/* } */
-
-/* .markdown-body-div>pre { */
-/*   overflow-x: 'scroll'; */
-/*   background-color: #111; */
-/*   color: #efefef; */
-/*   border-radius: 0; */
-/*   overflow-x: 'scroll'; */
-/*   padding: 8px; */
-/*   width: 100%; */
-/* } */
-
-
-/* .markdown-body>*, .markdown-body>:after, .markdown-body>:before { */  
-/*   background-color: #1e1e1e; */
-/*   color: #efefef; */
-/* } */
-/* .markdown-body>pre { */
-/*   background-color: #111; */
-/*   color: #efefef; */
-/*   border-radius: 0; */
-/*   overflow-x: 'scroll'; */
-/*   padding: 8px; */
-/*   width: 100%; */
-/* } */
-
-/* .markdown-body>pre>code { */
-/*   background-color: #111; */
-/*   color: #efefef; */
-/* } */
-/* .markdown-body>pre { */
-/*   background-color: #000; */
-/*   color: #000; */
-/*   padding: 2px; */
-/*   border-radius: 4px; */
-/* } */
-
-
-
-/* dark mode styles */
-/* @media (prefers-color-scheme: dark) { */
-/*   .chat-bubble { */
-/*     background-color: rgba(0,0,0,0.87) !important; */
-/*   } */
-/*   .avatar-assistant { */
-/*     background-color: white !important; */
-/*   } */
-/* } */
