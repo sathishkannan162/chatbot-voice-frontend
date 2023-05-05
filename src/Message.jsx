@@ -20,7 +20,7 @@ import robot from './assets/robot-avatar.png';
 import user from './assets/user-avatar.png';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Avatar, Divider, Paper, Typography, Box } from '@mui/material';
+import { Avatar, Divider, Paper, Typography, Box, Tooltip} from '@mui/material';
 import 'github-markdown-css/github-markdown.css';
 import './Message.css';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -76,9 +76,8 @@ export default function Message(props) {
     ? `avatar avatar-${message.role}`
     : `avatar avatar-dark-${message.role}`;
   // const markdownClass = light ? `markdown-body markdown-body-light` :`markdown-body markdown-body-dark`;
-  let codeBlockTemp = ''; // create a variable to temporarily store codeblock for copy
-  // setting state inside jsx leads to rerendering loop.
-  // set state outside it. eg: inside the function.
+  let codeBlockTemp = ''; // NOTE: create a variable to temporarily store codeblock for copy
+  //NOTE: setting state inside jsx leads to rerendering loop. set state outside it. eg: inside the function.
   const handleCopyCodeBlock = () => {
     window.navigator.clipboard.writeText(codeBlockTemp);
     setCopy(true);
@@ -116,13 +115,17 @@ export default function Message(props) {
                   >
                     {match[1]}
                     {copy ? (
-                      <AssignmentTurnedInIcon />
+                      <Tooltip title='copied' placement='right-end'>
+                        <AssignmentTurnedInIcon />
+                      </Tooltip>
                     ) : (
-                      // tooltip for the buttons.
+                      // TODO:tooltip for the buttons.
+                      <Tooltip title='copy code' placement='right-end'>
                       <ContentPasteIcon
                         fontSize="small"
                         onClick={handleCopyCodeBlock}
                       />
+                      </Tooltip>
                     )}
                   </Box>
                   {/* <Divider /> */}
