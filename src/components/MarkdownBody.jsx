@@ -46,7 +46,7 @@ export default function MarkdownBody(props) {
                 {match[1]}
                 {copy ? (
                   <Tooltip title="copied" placement="right-end">
-                    <AssignmentTurnedInIcon />
+                    <AssignmentTurnedInIcon fontSize="small" />
                   </Tooltip>
                 ) : (
                   <Tooltip title="copy code" placement="right-end">
