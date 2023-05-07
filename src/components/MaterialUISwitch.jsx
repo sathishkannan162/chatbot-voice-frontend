@@ -1,5 +1,4 @@
 // taken from mui components library demo.
-
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 

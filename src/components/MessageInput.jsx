@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Box, TextField, IconButton} from '@mui/material';
-import httpCommon from './http/http-common';
+import httpCommon from '../http/http-common';
 import RecordAudioComponent from './RecordAudio';
 import { Send } from '@mui/icons-material';
 

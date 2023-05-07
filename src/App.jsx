@@ -1,4 +1,4 @@
-import ResponsiveDrawer from './ResponsiveHeader';
+import ResponsiveDrawer from './components/ResponsiveHeader';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import { useState, useEffect } from 'react';

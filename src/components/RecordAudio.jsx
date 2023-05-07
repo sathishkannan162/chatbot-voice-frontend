@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import httpCommon from './http/http-common';
+import httpCommon from '../http/http-common';
 import { BiMicrophone } from 'react-icons/bi';
 import { BsStopCircle } from 'react-icons/bs';
 import { MdOutlineTranscribe } from 'react-icons/md';

@@ -1,10 +1,10 @@
-import robot from './assets/robot-avatar.png';
-import user from './assets/user-avatar.png';
+import robot from '../assets/robot-avatar.png';
+import user from '../assets/user-avatar.png';
 import { Avatar, Paper, Tooltip } from '@mui/material';
-import './github-markdown-css/common.css';
-import './github-markdown-css/light.css';
-import './github-markdown-css/dark.css';
-import './Message.css';
+import '../styles/github-markdown-css/common.css';
+import '../styles/github-markdown-css/light.css';
+import '../styles/github-markdown-css/dark.css';
+import '../styles/Message.css';
 import MarkdownBody from './MarkdownBody';
 
 export default function Message(props) {
