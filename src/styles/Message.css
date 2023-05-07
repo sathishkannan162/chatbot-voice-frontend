@@ -53,6 +53,7 @@
   box-sizing: border-box;
   min-width: 10px;
   max-width: 880px;
+  font-size: small;
 }
 
 @media (min-width: 450px) and (max-width: 780px) {
