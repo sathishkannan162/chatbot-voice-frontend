@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, TextField, IconButton} from '@mui/material';
+import { Box, TextField, IconButton, Tooltip } from '@mui/material';
 import httpCommon from '../http/http-common';
 import RecordAudioComponent from './RecordAudio';
 import { Send } from '@mui/icons-material';
@@ -68,9 +68,11 @@ export default function MessageInput(props) {
           }}
         />
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-          <IconButton color="primary" onClick={handleInputSubmit}>
-            <Send />
-          </IconButton>
+          <Tooltip title="Send">
+            <IconButton color="primary" onClick={handleInputSubmit}>
+              <Send />
+            </IconButton>
+          </Tooltip>
           <RecordAudioComponent setInputText={setInputText} />
         </Box>
       </Box>
