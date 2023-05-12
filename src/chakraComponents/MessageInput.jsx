@@ -10,6 +10,7 @@ export default function MessageInput(props) {
       position={'fixed'}
       bottom="10px"
       minW={{ base: '90vw', sm: '94vw', md: '80vw' }}
+      outlineColor="grey"
     >
       <TextareaAutosize
         maxRows={5}

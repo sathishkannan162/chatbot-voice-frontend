@@ -1,0 +1,10 @@
+.textarea-input {
+  flex-grow: 1;
+  resize: none;
+  padding: 6px 4px;
+  background-color: #fafafa;
+}
+
+.textarea-input:enabled {
+  outline-color: teal;
+}

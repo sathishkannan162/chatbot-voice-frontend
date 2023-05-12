@@ -11,6 +11,9 @@ import {
   DrawerContent,
   Text,
   useDisclosure,
+  List,
+  ListItem,
+  Spacer,
   // BoxProps,
   // FlexProps,
 } from '@chakra-ui/react';
@@ -37,7 +40,7 @@ const LinkItems = [
   { name: 'Settings', icon: FiSettings },
 ];
 
-export default function SimpleSidebar({ children, Header }) {
+export default function SimpleSidebar({ children, Header, SidebarList }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -45,6 +48,7 @@ export default function SimpleSidebar({ children, Header }) {
         onClose={() => onClose}
         display={{ base: 'none', md: 'block' }}
         Header={Header}
+        SidebarList={SidebarList}
       />
       <Drawer
         autoFocus={false}
@@ -53,10 +57,14 @@ export default function SimpleSidebar({ children, Header }) {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full"
+        size="xs"
       >
         <DrawerContent>
-          <SidebarContent onClose={onClose} Header={Header} />
+          <SidebarContent
+            onClose={onClose}
+            Header={Header}
+            SidebarList={SidebarList}
+          />
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
@@ -76,7 +84,7 @@ export default function SimpleSidebar({ children, Header }) {
 //   onClose: () => void;
 // }
 
-const SidebarContent = ({ onClose, Header, ...rest }) => {
+const SidebarContent = ({ onClose, Header, SidebarList, ...rest }) => {
   return (
     <Box
       bg={useColorModeValue('white', 'gray.900')}
@@ -93,11 +101,16 @@ const SidebarContent = ({ onClose, Header, ...rest }) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
-      ))}
+      <Flex direction={'column'} justifyContent="space-between" height={"88vh"}>
+        {SidebarList.map((Button, index) => {
+          return <Button key={index}></Button>;
+        })}
+      </Flex>
+      {/* {LinkItems.map((link) => ( */}
+      {/* <NavItem key={link.name} icon={link.icon}> */}
+      {/* {link.name} */}
+      {/* </NavItem> */}
+      {/* ))} */}
     </Box>
   );
 };
