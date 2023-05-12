@@ -29,7 +29,7 @@ import {
 //   name: string;
 //   icon: IconType;
 // }
-const LinkItems= [
+const LinkItems = [
   { name: 'Home', icon: FiHome },
   { name: 'Trending', icon: FiTrendingUp },
   { name: 'Explore', icon: FiCompass },
@@ -52,7 +52,8 @@ export default function SimpleSidebar({ children }) {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full">
+        size="full"
+      >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
@@ -79,7 +80,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
       w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"
-      {...rest}>
+      {...rest}
+    >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           Logo
@@ -99,9 +101,13 @@ const SidebarContent = ({ onClose, ...rest }) => {
 //   icon: IconType;
 //   children: ReactText;
 // }
-const NavItem = ({ icon, children, ...rest } )=> {
+const NavItem = ({ icon, children, ...rest }) => {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link
+      href="#"
+      style={{ textDecoration: 'none' }}
+      _focus={{ boxShadow: 'none' }}
+    >
       <Flex
         align="center"
         p="4"
@@ -113,7 +119,8 @@ const NavItem = ({ icon, children, ...rest } )=> {
           bg: 'cyan.400',
           color: 'white',
         }}
-        {...rest}>
+        {...rest}
+      >
         {icon && (
           <Icon
             mr="4"
@@ -136,6 +143,9 @@ const NavItem = ({ icon, children, ...rest } )=> {
 const MobileNav = ({ onOpen, ...rest }) => {
   return (
     <Flex
+      position={'fixed'}
+      zIndex={2}
+      minW="100vw"
       ml={{ base: 0, md: 60 }}
       px={{ base: 4, md: 24 }}
       height="20"
@@ -144,7 +154,8 @@ const MobileNav = ({ onOpen, ...rest }) => {
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
       justifyContent="flex-start"
-      {...rest}>
+      {...rest}
+    >
       <IconButton
         variant="outline"
         onClick={onOpen}

@@ -7,7 +7,7 @@ export default function MessageList(props) {
     return <Message key={index} message={message} />;
   });
   return (
-    <Flex direction={'column'} gap={1} justifyContent={'right'}>
+    <Flex direction={'column'} gap={1} justifyContent={'right'} paddingTop="70px" paddingBottom="90px">
       {list}
     </Flex>
   );
