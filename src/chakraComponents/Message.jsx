@@ -1,6 +1,11 @@
 import { Card, CardBody, Avatar, Flex, Text } from '@chakra-ui/react';
 import robot from '../assets/robot-avatar.png';
 import user from '../assets/user-avatar.png';
+import '../styles/github-markdown-css/common.css';
+import '../styles/github-markdown-css/light.css';
+import '../styles/github-markdown-css/dark.css';
+import MarkdownBody from './MarkdownBody';
+
 export default function Message(props) {
   const { message } = props;
   const isUser = message.role === 'user';
@@ -18,7 +23,10 @@ export default function Message(props) {
               name={isUser ? 'user' : 'assistant'}
               src={isUser ? user : robot}
             ></Avatar>
-            <Text>{message.content}</Text>
+            <div className='markdown-body markdown-body-light'>
+
+              <MarkdownBody content={message.content} />
+            </div>
           </Flex>
         </CardBody>
       </Card>

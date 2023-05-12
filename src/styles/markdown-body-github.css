@@ -1,0 +1,23 @@
+markdown-body {
+box-sizing: border-box;
+min-width: 10px;
+max-width: 880px;
+font-size: small;
+}
+
+@media (min-width: 450px) and (max-width: 780px) {
+.markdown-body {
+  max-width: 400px;
+}
+.chat-bubble-assistant {
+  max-width: 80%;
+}
+}
+@media (max-width: 450px) {
+.markdown-body {
+  max-width: 200px;
+}
+.chat-bubble-assistant {
+  max-width: 95%;
+}
+}
