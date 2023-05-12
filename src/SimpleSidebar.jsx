@@ -37,13 +37,14 @@ const LinkItems = [
   { name: 'Settings', icon: FiSettings },
 ];
 
-export default function SimpleSidebar({ children }) {
+export default function SimpleSidebar({ children, Header }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
       <SidebarContent
         onClose={() => onClose}
         display={{ base: 'none', md: 'block' }}
+        Header={Header}
       />
       <Drawer
         autoFocus={false}
@@ -55,11 +56,15 @@ export default function SimpleSidebar({ children }) {
         size="full"
       >
         <DrawerContent>
-          <SidebarContent onClose={onClose} />
+          <SidebarContent onClose={onClose} Header={Header} />
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
-      <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
+      <MobileNav
+        display={{ base: 'flex', md: 'none' }}
+        onOpen={onOpen}
+        Header={Header}
+      />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
@@ -71,7 +76,7 @@ export default function SimpleSidebar({ children }) {
 //   onClose: () => void;
 // }
 
-const SidebarContent = ({ onClose, ...rest }) => {
+const SidebarContent = ({ onClose, Header, ...rest }) => {
   return (
     <Box
       bg={useColorModeValue('white', 'gray.900')}
@@ -84,7 +89,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+          {Header}
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -140,7 +145,7 @@ const NavItem = ({ icon, children, ...rest }) => {
 // interface MobileProps extends FlexProps {
 //   onOpen: () => void;
 // }
-const MobileNav = ({ onOpen, ...rest }) => {
+const MobileNav = ({ onOpen, Header, ...rest }) => {
   return (
     <Flex
       position={'fixed'}
@@ -164,7 +169,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
       />
 
       <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
-        Logo
+        {Header}
       </Text>
     </Flex>
   );

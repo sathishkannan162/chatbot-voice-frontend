@@ -7,7 +7,7 @@ export default function App() {
   // const [messages, setMessages] = useState([]);
   const [messages, setMessages] = useState(sampleMessages);
   return (
-    <SimpleSidebar>
+    <SimpleSidebar Header="Chat with AI">
       <MessageList messages={messages} />
       <MessageInput messages={messages} setMessages={setMessages} />
     </SimpleSidebar>
